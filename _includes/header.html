@@ -1,19 +1,19 @@
 <header class="site-header">
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="logo">{{ site.data.resume.name | split: ' ' | first }}</a>
+      <a href="{{ '/' | relative_url }}" class="logo">{{ site.data.resume.name | split: ' ' | first }}</a>
 
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
       </button>
 
       <ul class="nav-menu">
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#experience">Experience</a></li>
-        <li><a href="/#skills">Skills</a></li>
-        <li><a href="/#projects">Projects</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/#contact" class="btn btn-primary">Contact</a></li>
+        <li><a href="{{ '/' | relative_url }}#about">About</a></li>
+        <li><a href="{{ '/' | relative_url }}#experience">Experience</a></li>
+        <li><a href="{{ '/' | relative_url }}#skills">Skills</a></li>
+        <li><a href="{{ '/' | relative_url }}#projects">Projects</a></li>
+        <li><a href="{{ '/resume' | relative_url }}">Resume</a></li>
+        <li><a href="{{ '/' | relative_url }}#contact" class="btn btn-primary">Contact</a></li>
       </ul>
     </div>
   </nav>

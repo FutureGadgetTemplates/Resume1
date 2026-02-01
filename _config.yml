@@ -1,8 +1,8 @@
 # Site settings
 title: "Your Name - Creative Professional"
 description: "Creative professional portfolio and resume"
-baseurl: ""
-url: ""
+baseurl: "/Resume1"
+url: "https://futuregadgettemplates.github.io"
 
 # Build settings
 markdown: kramdown
