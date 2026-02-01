@@ -1,0 +1,138 @@
+# Personal Information
+name: "Alex Johnson"
+title: "Creative Designer & Developer"
+email: "alex@example.com"
+phone: "+1 (555) 123-4567"
+location: "San Francisco, CA"
+linkedin: "https://linkedin.com/in/alexjohnson"
+github: "https://github.com/alexjohnson"
+
+# About Section (combined with introduction)
+about:
+  image: "/assets/images/candidate.png"
+  description: |
+    I'm a passionate creative professional with over 5 years of experience
+    in design and development. I specialize in creating intuitive, user-centered
+    digital experiences that bridge the gap between aesthetics and functionality.
+
+# Skills Section
+skills:
+  - category: "Design"
+    items:
+      - "UI/UX Design"
+      - "Brand Identity"
+      - "Typography"
+      - "Illustration"
+
+  - category: "Development"
+    items:
+      - "HTML/CSS"
+      - "JavaScript"
+      - "React"
+      - "Python"
+
+  - category: "Tools"
+    items:
+      - "Figma"
+      - "Adobe Creative Suite"
+      - "Git"
+      - "VS Code"
+
+# Experience Section
+experience:
+  - title: "Senior Creative Designer"
+    company: "Design Studio Inc."
+    location: "San Francisco, CA"
+    period: "2021 - Present"
+    description: |
+      Lead designer responsible for major client projects and mentoring junior designers.
+    highlights:
+      - "Led redesign of flagship product, increasing user engagement by 40%"
+      - "Managed design system used across 5 product teams"
+      - "Mentored team of 4 junior designers"
+
+  - title: "UI/UX Designer"
+    company: "Tech Startup Co."
+    location: "San Francisco, CA"
+    period: "2019 - 2021"
+    description: |
+      Designed user interfaces and experiences for web and mobile applications.
+    highlights:
+      - "Designed and shipped 3 major product features"
+      - "Conducted user research with 50+ participants"
+      - "Improved conversion rate by 25% through A/B testing"
+
+  - title: "Junior Designer"
+    company: "Creative Agency"
+    location: "Los Angeles, CA"
+    period: "2017 - 2019"
+    description: |
+      Created visual designs for various clients across industries.
+    highlights:
+      - "Worked on 20+ client projects"
+      - "Developed brand identities for 5 startups"
+      - "Won agency's 'Rising Star' award in 2018"
+
+# Education Section
+education:
+  - degree: "Bachelor of Fine Arts in Graphic Design"
+    school: "California College of the Arts"
+    location: "San Francisco, CA"
+    year: "2017"
+    honors: "Magna Cum Laude"
+
+  - degree: "Certificate in UX Design"
+    school: "General Assembly"
+    location: "Online"
+    year: "2019"
+
+# Projects Section
+projects:
+  - title: "E-Commerce Redesign"
+    category: "UI/UX Design"
+    description: "Complete redesign of an e-commerce platform focusing on mobile-first experience and streamlined checkout flow."
+    image: "/assets/images/project1.jpg"
+    link: "#"
+    tags:
+      - "UI Design"
+      - "UX Research"
+      - "Figma"
+
+  - title: "Brand Identity System"
+    category: "Branding"
+    description: "Comprehensive brand identity for a tech startup including logo, typography, color system, and guidelines."
+    image: "/assets/images/project2.jpg"
+    link: "#"
+    tags:
+      - "Branding"
+      - "Logo Design"
+      - "Guidelines"
+
+  - title: "Mobile App Design"
+    category: "Product Design"
+    description: "End-to-end design for a fitness tracking app with focus on motivation and habit formation."
+    image: "/assets/images/project3.jpg"
+    link: "#"
+    tags:
+      - "Mobile Design"
+      - "iOS"
+      - "Android"
+
+  - title: "Portfolio Website"
+    category: "Web Development"
+    description: "Custom portfolio website built with Jekyll featuring smooth animations and responsive design."
+    image: "/assets/images/project4.jpg"
+    link: "#"
+    tags:
+      - "Jekyll"
+      - "HTML/CSS"
+      - "JavaScript"
+
+# Social Links (LinkedIn and GitHub only)
+social:
+  - platform: "LinkedIn"
+    url: "https://linkedin.com/in/alexjohnson"
+    icon: "linkedin"
+  - platform: "GitHub"
+    url: "https://github.com/alexjohnson"
+    icon: "github"

@@ -1,0 +1,122 @@
+---
+layout: default
+title: Resume
+---
+
+<div class="print-resume">
+  <div class="container">
+
+    <!-- Print Header -->
+    <header class="resume-header">
+      <div class="resume-name-section">
+        <h1 class="resume-name">{{ site.data.resume.name }}</h1>
+        <p class="resume-title">{{ site.data.resume.title }}</p>
+      </div>
+      <div class="resume-contact">
+        <div class="contact-item-print">
+          <strong>Email:</strong> <a href="mailto:{{ site.data.resume.email }}">{{ site.data.resume.email }}</a>
+        </div>
+        <div class="contact-item-print">
+          <strong>Phone:</strong> {{ site.data.resume.phone }}
+        </div>
+        <div class="contact-item-print">
+          <strong>Location:</strong> {{ site.data.resume.location }}
+        </div>
+        {% for social in site.data.resume.social %}
+        <div class="contact-item-print">
+          <strong>{{ social.platform }}:</strong> <a href="{{ social.url }}">{{ social.url }}</a>
+        </div>
+        {% endfor %}
+      </div>
+    </header>
+
+    <!-- Print Controls (hidden when printing) -->
+    <div class="print-controls no-print">
+      <button onclick="window.print()" class="btn btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print Resume
+      </button>
+      <a href="/#about" class="btn btn-secondary">Back to Portfolio</a>
+    </div>
+
+    <!-- About/Summary -->
+    <section class="resume-section">
+      <h2 class="resume-section-title">Professional Summary</h2>
+      <div class="resume-summary">
+        {{ site.data.resume.about.description | markdownify }}
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="resume-section">
+      <h2 class="resume-section-title">Work Experience</h2>
+      {% for job in site.data.resume.experience %}
+      <div class="resume-experience-item">
+        <div class="resume-job-header">
+          <div>
+            <h3 class="resume-job-title">{{ job.title }}</h3>
+            <p class="resume-company">{{ job.company }} - {{ job.location }}</p>
+          </div>
+          <div class="resume-period">{{ job.period }}</div>
+        </div>
+        <p class="resume-description">{{ job.description }}</p>
+        <ul class="resume-highlights">
+          {% for highlight in job.highlights %}
+          <li>{{ highlight }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="resume-section-title">Education</h2>
+      {% for edu in site.data.resume.education %}
+      <div class="resume-education-item">
+        <div class="resume-edu-header">
+          <div>
+            <h3 class="resume-degree">{{ edu.degree }}</h3>
+            <p class="resume-school">{{ edu.school }} - {{ edu.location }}</p>
+          </div>
+          <div class="resume-year">{{ edu.year }}</div>
+        </div>
+        {% if edu.honors %}
+        <p class="resume-honors">{{ edu.honors }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </section>
+
+    <!-- Skills -->
+    <section class="resume-section">
+      <h2 class="resume-section-title">Skills & Expertise</h2>
+      <div class="resume-skills-grid">
+        {% for category in site.data.resume.skills %}
+        <div class="resume-skill-category">
+          <h4 class="resume-skill-category-title">{{ category.category }}</h4>
+          <p class="resume-skill-list">{{ category.items | join: ', ' }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Projects (Brief) -->
+    <section class="resume-section">
+      <h2 class="resume-section-title">Featured Projects</h2>
+      {% assign sorted_projects = site.projects | sort: 'date' | reverse | limit: 4 %}
+      {% for project in sorted_projects %}
+      <div class="resume-project-item">
+        <h3 class="resume-project-title">{{ project.title }}</h3>
+        <p class="resume-project-description">{{ project.description }}</p>
+        <p class="resume-project-tags"><strong>Technologies:</strong> {{ project.tags | join: ', ' }}</p>
+      </div>
+      {% endfor %}
+    </section>
+
+  </div>
+</div>

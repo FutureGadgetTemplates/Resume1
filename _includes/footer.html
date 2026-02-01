@@ -1,0 +1,23 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>{{ site.data.resume.name }}</h3>
+        <p>{{ site.data.resume.title }}</p>
+      </div>
+
+      <div class="footer-social">
+        {% for social in site.data.resume.social %}
+        <a href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ social.platform }}">
+          {% include icons/{{ social.icon }}.html %}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ site.data.resume.name }}. All rights reserved.</p>
+      <p class="built-with">Built with Jekyll</p>
+    </div>
+  </div>
+</footer>

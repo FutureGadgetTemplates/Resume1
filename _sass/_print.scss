@@ -1,0 +1,420 @@
+@use "variables" as *;
+
+// Print Resume Page Styles
+.print-resume {
+  background: white;
+  min-height: 100vh;
+  padding: $space-16 0;
+
+  .container {
+    max-width: 900px;
+  }
+}
+
+// Resume Header
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: $space-8;
+  border-bottom: 3px solid $primary;
+  margin-bottom: $space-8;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: $space-4;
+  }
+}
+
+.resume-name-section {
+  flex: 1;
+}
+
+.resume-name {
+  font-size: $text-4xl;
+  font-weight: 700;
+  color: $dark;
+  margin-bottom: $space-2;
+  line-height: 1.2;
+}
+
+.resume-title {
+  font-size: $text-xl;
+  color: $gray-600;
+  margin: 0;
+}
+
+.resume-contact {
+  text-align: right;
+  font-size: $text-sm;
+  color: $gray-600;
+
+  @media (max-width: $breakpoint-md) {
+    text-align: left;
+  }
+}
+
+.contact-item-print {
+  margin-bottom: $space-1;
+
+  strong {
+    color: $secondary;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Print Controls
+.print-controls {
+  display: flex;
+  gap: $space-4;
+  justify-content: center;
+  margin-bottom: $space-12;
+  padding: $space-8 0;
+  border-bottom: 1px solid $gray-200;
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// Resume Sections
+.resume-section {
+  margin-bottom: $space-12;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.resume-section-title {
+  font-size: $text-2xl;
+  font-weight: 700;
+  color: $dark;
+  margin-bottom: $space-6;
+  padding-bottom: $space-3;
+  border-bottom: 2px solid $gray-300;
+}
+
+// Summary
+.resume-summary {
+  font-size: $text-base;
+  line-height: 1.8;
+  color: $gray-600;
+
+  p {
+    margin-bottom: $space-4;
+  }
+}
+
+// Experience Items
+.resume-experience-item {
+  margin-bottom: $space-8;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.resume-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $space-3;
+  gap: $space-4;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+.resume-job-title {
+  font-size: $text-xl;
+  font-weight: 600;
+  color: $dark;
+  margin-bottom: $space-1;
+}
+
+.resume-company {
+  font-size: $text-base;
+  color: $gray-600;
+  margin: 0;
+}
+
+.resume-period {
+  font-size: $text-sm;
+  font-weight: 500;
+  color: $primary;
+  white-space: nowrap;
+}
+
+.resume-description {
+  font-size: $text-base;
+  color: $gray-600;
+  margin-bottom: $space-3;
+  font-style: italic;
+}
+
+.resume-highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: $space-5;
+    margin-bottom: $space-2;
+    font-size: $text-base;
+    color: $gray-600;
+    line-height: 1.6;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+}
+
+// Education Items
+.resume-education-item {
+  margin-bottom: $space-6;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.resume-edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $space-2;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+.resume-degree {
+  font-size: $text-lg;
+  font-weight: 600;
+  color: $dark;
+  margin-bottom: $space-1;
+}
+
+.resume-school {
+  font-size: $text-base;
+  color: $gray-600;
+  margin: 0;
+}
+
+.resume-year {
+  font-size: $text-sm;
+  font-weight: 500;
+  color: $primary;
+  white-space: nowrap;
+}
+
+.resume-honors {
+  font-size: $text-sm;
+  color: $accent;
+  font-weight: 500;
+  margin: 0;
+}
+
+// Skills Grid
+.resume-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resume-skill-category {
+  margin-bottom: $space-4;
+}
+
+.resume-skill-category-title {
+  font-size: $text-base;
+  font-weight: 600;
+  color: $secondary;
+  margin-bottom: $space-2;
+}
+
+.resume-skill-list {
+  font-size: $text-sm;
+  color: $gray-600;
+  line-height: 1.8;
+  margin: 0;
+}
+
+// Projects
+.resume-project-item {
+  margin-bottom: $space-6;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.resume-project-title {
+  font-size: $text-lg;
+  font-weight: 600;
+  color: $dark;
+  margin-bottom: $space-2;
+}
+
+.resume-project-description {
+  font-size: $text-base;
+  color: $gray-600;
+  margin-bottom: $space-2;
+}
+
+.resume-project-tags {
+  font-size: $text-sm;
+  color: $gray-600;
+  margin: 0;
+
+  strong {
+    color: $secondary;
+  }
+}
+
+// Print-specific styles
+@media print {
+  // Hide navigation, footer, and print controls
+  .site-header,
+  .site-footer,
+  .print-controls,
+  .no-print {
+    display: none !important;
+  }
+
+  // Adjust page margins
+  @page {
+    margin: 0.75in;
+    size: letter;
+  }
+
+  // Reset print resume styles
+  .print-resume {
+    padding: 0;
+    background: white;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  // Optimize spacing for print
+  .resume-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    page-break-after: avoid;
+  }
+
+  .resume-name {
+    font-size: 28pt;
+  }
+
+  .resume-title {
+    font-size: 14pt;
+  }
+
+  .resume-contact {
+    font-size: 9pt;
+  }
+
+  .resume-section {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+  }
+
+  .resume-section-title {
+    font-size: 16pt;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.25rem;
+    page-break-after: avoid;
+  }
+
+  .resume-experience-item,
+  .resume-education-item,
+  .resume-project-item {
+    page-break-inside: avoid;
+  }
+
+  .resume-job-title,
+  .resume-degree,
+  .resume-project-title {
+    font-size: 12pt;
+  }
+
+  .resume-summary,
+  .resume-description,
+  .resume-highlights li,
+  .resume-project-description {
+    font-size: 10pt;
+  }
+
+  .resume-company,
+  .resume-school,
+  .resume-skill-list {
+    font-size: 10pt;
+  }
+
+  .resume-period,
+  .resume-year,
+  .resume-honors,
+  .resume-project-tags {
+    font-size: 9pt;
+  }
+
+  // Ensure good contrast for printing
+  body,
+  .print-resume {
+    color: black !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  .resume-header {
+    border-bottom-color: black !important;
+  }
+
+  .resume-section-title {
+    border-bottom-color: #999 !important;
+  }
+
+  // Prevent page breaks in bad places
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  ul {
+    page-break-before: avoid;
+  }
+}

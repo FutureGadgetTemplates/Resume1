@@ -1,0 +1,128 @@
+@use "variables" as *;
+
+// Reset & Base Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-body;
+  font-size: $text-base;
+  line-height: 1.6;
+  color: $secondary;
+  background-color: $light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $dark;
+}
+
+h1 { font-size: $text-5xl; }
+h2 { font-size: $text-4xl; }
+h3 { font-size: $text-2xl; }
+h4 { font-size: $text-xl; }
+
+@media (max-width: $breakpoint-md) {
+  h1 { font-size: $text-4xl; }
+  h2 { font-size: $text-3xl; }
+  h3 { font-size: $text-xl; }
+}
+
+p {
+  margin-bottom: $space-4;
+  color: $gray-600;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-6;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $space-4;
+  }
+}
+
+// Section
+.section {
+  padding: $space-24 0;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-16 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $space-16;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: $text-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $primary;
+  margin-bottom: $space-3;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$space-3;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, $primary, $accent);
+    border-radius: $radius-full;
+  }
+}
+
+// Selection
+::selection {
+  background-color: $primary;
+  color: white;
+}

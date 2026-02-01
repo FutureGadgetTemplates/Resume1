@@ -1,0 +1,196 @@
+---
+layout: default
+---
+
+<!-- Hero/About Section (Combined) -->
+<section class="hero" id="about">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">{{ site.data.resume.name }}</h1>
+        <p class="hero-title">{{ site.data.resume.title }}</p>
+        <div class="hero-about">
+          {{ site.data.resume.about.description | markdownify }}
+        </div>
+        <div class="hero-cta">
+          <a href="#experience" class="btn btn-secondary">Experience</a>
+          <a href="#projects" class="btn btn-secondary">Projects</a>
+          <a href="#contact" class="btn btn-secondary">Contact</a>
+          <a href="/resume" class="btn btn-primary">Resume</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="{{ site.data.resume.about.image }}" alt="{{ site.data.resume.name }}">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section class="experience section" id="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Career Path</span>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+    <div class="timeline">
+      {% for job in site.data.resume.experience %}
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3 class="job-title">{{ job.title }}</h3>
+            <span class="job-period">{{ job.period }}</span>
+          </div>
+          <p class="job-company">{{ job.company }} &middot; {{ job.location }}</p>
+          <p class="job-description">{{ job.description }}</p>
+          <ul class="job-highlights">
+            {% for highlight in job.highlights %}
+            <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="section-header" style="margin-top: 4rem;">
+      <span class="section-label">Background</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="education-grid">
+      {% for edu in site.data.resume.education %}
+      <div class="education-card">
+        <div class="education-year">{{ edu.year }}</div>
+        <h3 class="education-degree">{{ edu.degree }}</h3>
+        <p class="education-school">{{ edu.school }}</p>
+        <p class="education-location">{{ edu.location }}</p>
+        {% if edu.honors %}
+        <span class="education-honors">{{ edu.honors }}</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills section" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-title">Skills & Tools</h2>
+    </div>
+    <div class="skills-grid">
+      {% for category in site.data.resume.skills %}
+      <div class="skill-category">
+        <h3 class="category-title">{{ category.category }}</h3>
+        <ul class="skill-list">
+          {% for skill in category.items %}
+          <li class="skill-item">{{ skill }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+      {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+      {% for project in sorted_projects %}
+      <a href="{{ project.url }}" class="project-card-link">
+        <div class="project-card">
+          <div class="project-image">
+            {% if project.image %}
+            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-thumbnail">
+            {% else %}
+            <div class="project-placeholder">
+              <span>{{ project.title | truncate: 2, '' }}</span>
+            </div>
+            {% endif %}
+            <div class="project-overlay">
+              <span class="project-link">View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">{{ project.category }}</span>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tags">
+              {% for tag in project.tags %}
+              <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">Let's Work Together</h2>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info">
+        <p class="contact-intro">
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        </p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:{{ site.data.resume.email }}">{{ site.data.resume.email }}</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Phone</span>
+            <a href="tel:{{ site.data.resume.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">{{ site.data.resume.phone }}</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Location</span>
+            <span>{{ site.data.resume.location }}</span>
+          </div>
+        </div>
+        <div class="contact-social">
+          {% for social in site.data.resume.social %}
+          <a href="{{ social.url }}" target="_blank" rel="noopener" class="social-link">
+            {% include icons/{{ social.icon }}.html %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>

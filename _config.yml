@@ -1,0 +1,33 @@
+# Site settings
+title: "Your Name - Creative Professional"
+description: "Creative professional portfolio and resume"
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .idea
+  - LICENSE
+  - README.md
+
+# Collections
+collections:
+  projects:
+    output: true
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -1,0 +1,254 @@
+@use "variables" as *;
+
+// Project Detail Page Styles
+.project-hero {
+  background: $light;
+  padding-top: 120px;
+}
+
+.project-header {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  color: $gray-600;
+  font-size: $text-sm;
+  margin-bottom: $space-6;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.project-category-label {
+  display: inline-block;
+  font-size: $text-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $primary;
+  margin-bottom: $space-4;
+}
+
+.project-main-title {
+  font-size: $text-6xl;
+  margin-bottom: $space-6;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $text-4xl;
+  }
+}
+
+.project-subtitle {
+  font-size: $text-xl;
+  color: $gray-600;
+  line-height: 1.8;
+  margin-bottom: $space-8;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $space-6;
+  flex-wrap: wrap;
+  margin-top: $space-8;
+}
+
+.project-tags-detail {
+  display: flex;
+  gap: $space-2;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-content {
+  background: white;
+}
+
+.project-body {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: $text-3xl;
+    margin-top: $space-12;
+    margin-bottom: $space-6;
+    color: $dark;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    font-size: $text-xl;
+    margin-top: $space-8;
+    margin-bottom: $space-4;
+    color: $secondary;
+  }
+
+  p {
+    font-size: $text-lg;
+    line-height: 1.8;
+    color: $gray-600;
+    margin-bottom: $space-6;
+  }
+
+  ul, ol {
+    margin-bottom: $space-6;
+    padding-left: $space-8;
+
+    li {
+      font-size: $text-lg;
+      line-height: 1.8;
+      color: $gray-600;
+      margin-bottom: $space-3;
+      list-style: disc;
+    }
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+
+  strong {
+    color: $secondary;
+    font-weight: 600;
+  }
+
+  blockquote {
+    border-left: 4px solid $primary;
+    padding-left: $space-6;
+    margin: $space-8 0;
+    font-style: italic;
+    color: $gray-600;
+    font-size: $text-xl;
+
+    p {
+      margin-bottom: $space-2;
+    }
+  }
+
+  code {
+    background: $gray-100;
+    padding: $space-1 $space-2;
+    border-radius: $radius-sm;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: $secondary;
+  }
+
+  pre {
+    background: $gray-100;
+    padding: $space-6;
+    border-radius: $radius-md;
+    overflow-x: auto;
+    margin-bottom: $space-6;
+
+    code {
+      background: none;
+      padding: 0;
+    }
+  }
+}
+
+.project-gallery {
+  background: $gray-100;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
+  margin-top: $space-8;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item {
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transition: transform $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.project-navigation {
+  background: white;
+  border-top: 1px solid $gray-200;
+}
+
+.project-nav-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-8;
+  margin-bottom: $space-8;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nav-project {
+  display: flex;
+  flex-direction: column;
+  padding: $space-6;
+  background: $gray-100;
+  border-radius: $radius-lg;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $gray-200;
+    transform: translateY(-2px);
+  }
+
+  .nav-label {
+    font-size: $text-sm;
+    color: $gray-500;
+    margin-bottom: $space-2;
+  }
+
+  .nav-title {
+    font-size: $text-xl;
+    font-weight: 600;
+    color: $dark;
+  }
+}
+
+.nav-prev {
+  text-align: left;
+}
+
+.nav-next {
+  text-align: right;
+}
+
+.project-nav-center {
+  text-align: center;
+  padding-top: $space-8;
+  border-top: 1px solid $gray-200;
+}
